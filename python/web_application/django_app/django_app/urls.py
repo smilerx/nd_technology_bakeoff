@@ -14,4 +14,8 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
+    # django_cas
+	(r'^accounts/login/$', 'django_cas.views.login'),
+	(r'^accounts/logout/$', 'django_cas.views.logout'),
+	# end django_cas
 )

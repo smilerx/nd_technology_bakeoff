@@ -102,6 +102,21 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+## django_cas settings
+CAS_SERVER_URL = 'https://login-test.cc.nd.edu/cas/'
+CAS_VERSION = '2'
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'django_cas.backends.CASBackend',
+)
+
+MIDDLEWARE_CLASSES += (
+    'django_cas.middleware.CASMiddleware',
+)
+
+## end django_cas settings
+
 ROOT_URLCONF = 'django_app.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
